@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Tv_App.Pages.Network_Page"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:uc="clr-namespace:Tv_App.UserControls">
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" MaxWidth="800" Margin="50 0">
+
+        <uc:TimeSetting Title="Enable Wifi" HasToggle="True" IsChecked="True"/>
+        <uc:TimeSetting Title="         Network SDN-1" HasText="True" HasToggle="False" Text="...  "/>
+        <uc:TimeSetting Title="         Network SDN-2" HasText="True" HasToggle="False" Text="...  "/>
+        <uc:TimeSetting Title="         Network SDN-3" HasText="True" HasToggle="False" Text="...  "/>
+        <uc:TimeSetting Title="Enable Hotspot" HasToggle="True"/>
+        <uc:TimeSetting Title="Mac Address"/>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,55 @@
+﻿<Window x:Class="Tv_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:page="clr-namespace:Tv_App.Pages"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Height="720" Width="1280" MinHeight="700" MinWidth="650" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+
+    <Border CornerRadius="5" MouseLeftButtonDown="Grid_MouseLeftButtonDown" MouseDown="Grid_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#2E3967"/>
+                <GradientStop Color="#192559" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Status Bar-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 15 15 0">
+                <TextBlock Text="05:34" Foreground="#FDF9F6" FontSize="28" VerticalAlignment="Center"/>
+                <StackPanel Margin="13 0" VerticalAlignment="Center">
+                    <TextBlock Text="Nov, 17" Foreground="#F8FEFA" FontSize="10"/>
+                    <TextBlock Text="Tuesday" Foreground="#F8FEFA" FontSize="10"/>
+                </StackPanel>
+                <icon:PackIconMaterial Kind="Wifi" Foreground="#FDF9F6" Width="25" Height="25" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!--Back Button-->
+            <Button Name="backButton" Click="backButton_Click" Style="{StaticResource backButton}">
+                <icon:PackIconMaterial Kind="ArrowLeft" Width="25" Height="25"/>
+            </Button>
+
+            <!--Page Title-->
+            <TextBlock x:Name="titleText" Text="Settings" Style="{StaticResource pageTitle}"/>
+
+            <!--Page Content-->
+            <ContentPresenter x:Name="container" Grid.Row="2">
+                <ContentPresenter.Content>
+                    <page:Setting_Page/>
+                </ContentPresenter.Content>
+            </ContentPresenter>
+
+        </Grid>
+    </Border>
+</Window>
